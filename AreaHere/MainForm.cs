@@ -15,22 +15,22 @@ namespace AreaHere
         public MainForm()
         {
             InitializeComponent();
-            ListBox[] lb = { listBox1, listBox2, listBox3, listBox4 };
-            for (int i = 0; i < 4; i++)
-                lb[i].SelectedIndex = 0;
+            ComboBox[] lb = { listBox1, listBox2, listBox3, listBox4 };
+            for (int i = 0; i < lb.Length; i++)
+                lb[i].DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
 
         private IPlayer[] GetPlayers()
         {
             int count = 0;
-            ListBox[] lb = { listBox1, listBox2, listBox3, listBox4 };
+            ComboBox[] lb = { listBox1, listBox2, listBox3, listBox4 };
             TextBox[] tb = { textBox1, textBox2, textBox3, textBox4 };
             for (int i = 0; i < 4; i++) if (lb[i].SelectedIndex != 0) count++;
             if (count < 2) throw new Exception();
             IPlayer[] players = new IPlayer[count];
             int j = 0;
-            for(int i = 0; i < 4; i++, j++)
-                switch(lb[i].SelectedIndex)
+            for (int i = 0; i < lb.Length; i++, j++)
+                switch (lb[i].SelectedIndex)
                 {
                     case 0:
                         j--;

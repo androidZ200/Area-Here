@@ -1,0 +1,11 @@
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\bin\Release\AreaHere.exe.config
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\bin\Release\AreaHere.exe
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\bin\Release\AreaHere.pdb
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.csprojAssemblyReference.cache
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.GameForm.resources
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.MainForm.resources
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.Properties.Resources.resources
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.csproj.GenerateResource.cache
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.csproj.CoreCompileInputs.cache
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.exe
+C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Release\AreaHere.pdb

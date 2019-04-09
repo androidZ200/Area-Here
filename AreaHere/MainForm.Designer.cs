@@ -39,10 +39,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ComboBox();
+            this.listBox2 = new System.Windows.Forms.ComboBox();
+            this.listBox3 = new System.Windows.Forms.ComboBox();
+            this.listBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarY)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +123,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 201);
+            this.textBox1.Location = new System.Drawing.Point(12, 162);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 20);
             this.textBox1.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 227);
+            this.textBox2.Location = new System.Drawing.Point(12, 188);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(119, 20);
             this.textBox2.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 253);
+            this.textBox3.Location = new System.Drawing.Point(12, 214);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(119, 20);
             this.textBox3.TabIndex = 9;
@@ -147,7 +147,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 279);
+            this.textBox4.Location = new System.Drawing.Point(12, 243);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(119, 20);
             this.textBox4.TabIndex = 10;
@@ -156,64 +156,60 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalExtent = 4;
-            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.Items.AddRange(new object[] {
             "none",
             "player",
             "bot"});
-            this.listBox1.Location = new System.Drawing.Point(137, 204);
+            this.listBox1.Location = new System.Drawing.Point(137, 161);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(102, 17);
-            this.listBox1.TabIndex = 11;
+            this.listBox1.Size = new System.Drawing.Size(102, 21);
+            this.listBox1.TabIndex = 15;
+            this.listBox1.Text = "none";
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.HorizontalExtent = 4;
-            this.listBox2.HorizontalScrollbar = true;
             this.listBox2.Items.AddRange(new object[] {
             "none",
             "player",
             "bot"});
-            this.listBox2.Location = new System.Drawing.Point(137, 230);
+            this.listBox2.Location = new System.Drawing.Point(137, 188);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(102, 17);
-            this.listBox2.TabIndex = 12;
+            this.listBox2.Size = new System.Drawing.Size(102, 21);
+            this.listBox2.TabIndex = 15;
+            this.listBox2.Text = "none";
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.HorizontalExtent = 4;
-            this.listBox3.HorizontalScrollbar = true;
             this.listBox3.Items.AddRange(new object[] {
             "none",
             "player",
             "bot"});
-            this.listBox3.Location = new System.Drawing.Point(137, 256);
+            this.listBox3.Location = new System.Drawing.Point(137, 215);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(102, 17);
-            this.listBox3.TabIndex = 13;
+            this.listBox3.Size = new System.Drawing.Size(102, 21);
+            this.listBox3.TabIndex = 15;
+            this.listBox3.Text = "none";
             // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
-            this.listBox4.HorizontalExtent = 4;
-            this.listBox4.HorizontalScrollbar = true;
             this.listBox4.Items.AddRange(new object[] {
             "none",
             "player",
             "bot"});
-            this.listBox4.Location = new System.Drawing.Point(137, 282);
+            this.listBox4.Location = new System.Drawing.Point(137, 242);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(102, 17);
-            this.listBox4.TabIndex = 14;
+            this.listBox4.Size = new System.Drawing.Size(102, 21);
+            this.listBox4.TabIndex = 15;
+            this.listBox4.Text = "none";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 311);
+            this.ClientSize = new System.Drawing.Size(251, 275);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
@@ -229,8 +225,8 @@
             this.Controls.Add(this.trackBarY);
             this.Controls.Add(this.trackBarX);
             this.Controls.Add(this.PlayButton);
-            this.MaximumSize = new System.Drawing.Size(267, 350);
-            this.MinimumSize = new System.Drawing.Size(267, 350);
+            this.MaximumSize = new System.Drawing.Size(267, 314);
+            this.MinimumSize = new System.Drawing.Size(267, 314);
             this.Name = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarY)).EndInit();
@@ -252,10 +248,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ComboBox listBox1;
+        private System.Windows.Forms.ComboBox listBox2;
+        private System.Windows.Forms.ComboBox listBox3;
+        private System.Windows.Forms.ComboBox listBox4;
     }
 }
 
