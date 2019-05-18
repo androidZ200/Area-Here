@@ -43,6 +43,7 @@
             this.listBox2 = new System.Windows.Forms.ComboBox();
             this.listBox3 = new System.Windows.Forms.ComboBox();
             this.listBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMode = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarY)).BeginInit();
             this.SuspendLayout();
@@ -51,21 +52,24 @@
             // 
             this.PlayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.PlayButton.ForeColor = System.Drawing.Color.White;
             this.PlayButton.Location = new System.Drawing.Point(13, 13);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(226, 53);
             this.PlayButton.TabIndex = 0;
             this.PlayButton.Text = "Play";
-            this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.UseVisualStyleBackColor = false;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // trackBarX
             // 
-            this.trackBarX.Location = new System.Drawing.Point(12, 72);
+            this.trackBarX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.trackBarX.Location = new System.Drawing.Point(15, 72);
             this.trackBarX.Maximum = 80;
             this.trackBarX.Minimum = 10;
             this.trackBarX.Name = "trackBarX";
-            this.trackBarX.Size = new System.Drawing.Size(104, 45);
+            this.trackBarX.Size = new System.Drawing.Size(101, 45);
             this.trackBarX.SmallChange = 4;
             this.trackBarX.TabIndex = 1;
             this.trackBarX.TickFrequency = 4;
@@ -74,6 +78,7 @@
             // 
             // trackBarY
             // 
+            this.trackBarY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.trackBarY.Location = new System.Drawing.Point(135, 72);
             this.trackBarY.Maximum = 60;
             this.trackBarY.Minimum = 10;
@@ -88,7 +93,8 @@
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(44, 120);
+            this.labelX.ForeColor = System.Drawing.Color.White;
+            this.labelX.Location = new System.Drawing.Point(57, 104);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(19, 13);
             this.labelX.TabIndex = 3;
@@ -97,7 +103,8 @@
             // labelY
             // 
             this.labelY.AutoSize = true;
-            this.labelY.Location = new System.Drawing.Point(164, 120);
+            this.labelY.ForeColor = System.Drawing.Color.White;
+            this.labelY.Location = new System.Drawing.Point(177, 104);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(19, 13);
             this.labelY.TabIndex = 4;
@@ -106,7 +113,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 120);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(25, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 5;
@@ -115,7 +123,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 120);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(145, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 6;
@@ -123,6 +132,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(12, 162);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 20);
@@ -131,6 +142,8 @@
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(12, 188);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(119, 20);
@@ -139,6 +152,8 @@
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
             this.textBox3.Location = new System.Drawing.Point(12, 214);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(119, 20);
@@ -147,6 +162,8 @@
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
             this.textBox4.Location = new System.Drawing.Point(12, 243);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(119, 20);
@@ -155,6 +172,8 @@
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
             "none",
@@ -168,6 +187,8 @@
             // 
             // listBox2
             // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox2.ForeColor = System.Drawing.Color.White;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Items.AddRange(new object[] {
             "none",
@@ -181,6 +202,8 @@
             // 
             // listBox3
             // 
+            this.listBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox3.ForeColor = System.Drawing.Color.White;
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Items.AddRange(new object[] {
             "none",
@@ -194,6 +217,8 @@
             // 
             // listBox4
             // 
+            this.listBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox4.ForeColor = System.Drawing.Color.White;
             this.listBox4.FormattingEnabled = true;
             this.listBox4.Items.AddRange(new object[] {
             "none",
@@ -205,11 +230,29 @@
             this.listBox4.TabIndex = 15;
             this.listBox4.Text = "none";
             // 
+            // comboBoxMode
+            // 
+            this.comboBoxMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.comboBoxMode.ForeColor = System.Drawing.Color.White;
+            this.comboBoxMode.FormattingEnabled = true;
+            this.comboBoxMode.Items.AddRange(new object[] {
+            "Normal",
+            "Wall"});
+            this.comboBoxMode.Location = new System.Drawing.Point(12, 136);
+            this.comboBoxMode.Name = "comboBoxMode";
+            this.comboBoxMode.Size = new System.Drawing.Size(227, 21);
+            this.comboBoxMode.TabIndex = 16;
+            this.comboBoxMode.Text = "Normal";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(251, 275);
+            this.Controls.Add(this.comboBoxMode);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
@@ -252,6 +295,7 @@
         private System.Windows.Forms.ComboBox listBox2;
         private System.Windows.Forms.ComboBox listBox3;
         private System.Windows.Forms.ComboBox listBox4;
+        private System.Windows.Forms.ComboBox comboBoxMode;
     }
 }
 

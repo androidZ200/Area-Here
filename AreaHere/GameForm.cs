@@ -55,7 +55,6 @@ namespace AreaHere
         }
         private Bitmap DrawField()
         {
-            Color[] colorPlayer = { Color.Red, Color.Blue, Color.Orange, Color.Green };
             if (pictureBox1.Width > 0)
             {
                 Bitmap bmp = new Bitmap(game.field.Width * 50, game.field.Height * 50);
@@ -63,9 +62,8 @@ namespace AreaHere
                 g.DrawRectangle(new Pen(Color.Gray, 1), 0, 0, bmp.Width - 1, bmp.Height - 1);
                 for (int j = 0; j < game.field.Height; j++)
                     for (int i = 0; i < game.field.Width; i++)
-                        for (int l = 0; l < game.players.Length; l++)
-                            if (game.field.field[i, j] == game.players[l])
-                                g.FillRectangle(new SolidBrush(colorPlayer[l]), i * 50, j * 50, 49, 49);
+                        if (game.field.field[i, j] != null)
+                            g.DrawImage(game.field.field[i, j].GetImage(49), i * 50, j * 50);
                 bmp = new Bitmap(bmp, GetSizeImage());
                 pictureBox1.Image = bmp;
                 return bmp;
@@ -133,7 +131,7 @@ namespace AreaHere
             this.game = game;
             game.Win += Win;
             game.NewMove += NewMove;
-            game.DoneMove += new Action( () => { DrawField(); });
+            game.DoneMove += new Action(() => { DrawField(); });
             for (int i = 0; i < game.players.Length; i++)
                 if (game.players[i] is Player) ((Player)game.players[i]).GetMoveRectangle += GetMove;
             gameThread = new Thread(game.Start);
@@ -168,8 +166,12 @@ namespace AreaHere
                 if (beginningRectangle.X == -1 || beginningRectangle.Y == -1) click = false;
                 else
                 {
-                    moveRectangle.Down = moveRectangle.Up = beginningRectangle.Y;
-                    moveRectangle.Left = moveRectangle.Right = beginningRectangle.X;
+                    moveRectangle.Down = beginningRectangle.Y;
+                    moveRectangle.Up = beginningRectangle.Y;
+                    moveRectangle.Down = beginningRectangle.Y;
+                    moveRectangle.Left = beginningRectangle.X;
+                    moveRectangle.Right = beginningRectangle.X;
+                    moveRectangle.Left = beginningRectangle.X;
                     DrawField(moveRectangle);
                 }
             }

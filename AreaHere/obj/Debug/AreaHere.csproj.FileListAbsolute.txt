@@ -9,3 +9,14 @@ C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\bi
 C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\bin\Debug\AreaHere.pdb
 C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.exe
 C:\Users\Даниил\Documents\Visual Studio 2017\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.pdb
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\bin\Debug\AreaHere.exe.config
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\bin\Debug\AreaHere.exe
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\bin\Debug\AreaHere.pdb
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.csprojAssemblyReference.cache
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.GameForm.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.MainForm.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.Properties.Resources.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.csproj.GenerateResource.cache
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.csproj.CoreCompileInputs.cache
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.exe
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.pdb

@@ -9,6 +9,7 @@ namespace AreaHere
 {
     public class Game
     {
+        public enum Mode { Normal, Wall }
         public Field field { get; private set; }
         public IPlayer[] players { get; private set; }
         public event Action<IPlayer, int, int> NewMove;
@@ -20,6 +21,20 @@ namespace AreaHere
         {
             if (players.Length < 2 || players.Length > 4) throw new Exception();
             field = new Field(Width, Height);
+            this.players = players;
+        }
+        public Game(int Width, int Height, IPlayer[] players, Mode mode)
+        {
+            if (players.Length < 2 || players.Length > 4) throw new Exception();
+            switch(mode)
+            {
+                case Mode.Normal:
+                    field = new Field(Width, Height);
+                    break;
+                case Mode.Wall:
+                    field = new Field2(Width, Height);
+                    break;
+            }
             this.players = players;
         }
         public void Start()

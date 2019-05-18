@@ -9,12 +9,12 @@ namespace AreaHere
 {
     public class Field
     {
-        enum Fill { Void, Player, Time, None }
-        enum Direction { Up, Right, Down, Left }
+        protected enum Fill { Void, Player, Time, None }
+        protected enum Direction { Up, Right, Down, Left }
         public IPlayer[,] field { get; private set; }
         public int Width { get; private set; }
         public int Height { get; private set; }
-        private bool FieldChanged = false;
+        protected bool FieldChanged = false;
 
         public Field(int Width, int Height)
         {
@@ -26,7 +26,7 @@ namespace AreaHere
                     field[i, j] = null;
         }
 
-        public int CountVoidCell()
+        public virtual int CountVoidCell()
         {
             int count = 0;
             for (int i = 0; i < Width; i++)
@@ -35,7 +35,7 @@ namespace AreaHere
             return count;
 
         }
-        public bool IsVoidRectangle(Rectangle r)
+        public virtual bool IsVoidRectangle(Rectangle r)
         {
             if (r.Left < 0 || r.Up < 0 || r.Right >= Width || r.Down >= Height) return false;
             for (int i = r.Left; i <= r.Right; i++)
@@ -43,14 +43,14 @@ namespace AreaHere
                     if (field[i, j] != null) return false;
             return true;
         }
-        public void SetRectangle(Rectangle r, IPlayer p)
+        public virtual void SetRectangle(Rectangle r, IPlayer p)
         {
             FieldChanged = true;
             for (int i = r.Left; i <= r.Right; i++)
                 for (int j = r.Up; j <= r.Down; j++)
                     field[i, j] = p;
         }
-        public void Update()
+        public virtual void Update()
         {
             if (!FieldChanged) return;
             FieldChanged = false;
@@ -62,19 +62,19 @@ namespace AreaHere
             HashSet<IPlayer> neighboard = new HashSet<IPlayer>();
             for (int j = 0; j < Height; j++)
                 for (int i = 0; i < Width; i++)
-                    if(points[i, j] == Fill.Void)
+                    if (points[i, j] == Fill.Void)
                     {
                         Point coordinate = new Point(i, j);
                         Point startPoint = new Point(i, j);
                         Direction angle = Direction.Up;
                         int countRotate = 0;
-                        while(true)
+                        while (true)
                         {
                             points[coordinate.X, coordinate.Y] = Fill.Time;
                             angle = Rotate(angle, false);
                             --countRotate;
                             Point n = Neighboard(coordinate, angle);
-                            while(!InsideField(n.X, n.Y))
+                            while (!InsideField(n.X, n.Y))
                             {
                                 angle = Rotate(angle, true);
                                 ++countRotate;
@@ -82,24 +82,24 @@ namespace AreaHere
                             }
                             if (points[n.X, n.Y] == Fill.Void || points[n.X, n.Y] == Fill.Time)
                                 coordinate = n;
-                            else if(points[n.X, n.Y] == Fill.Player)
+                            else if (points[n.X, n.Y] == Fill.Player)
                             {
                                 neighboard.Add(field[n.X, n.Y]);
                                 angle = Rotate(Rotate(angle, true), true);
                                 countRotate += 2;
                                 if (coordinate == startPoint && countRotate > 3)
                                 {
-                                        if (neighboard.Count == 1)
-                                        {
-                                            FillField(neighboard.ElementAt(0), points);
-                                            FillTime(points, Fill.Player);
-                                        }
-                                        else if (neighboard.Count > 1)
-                                            FillTime(points, Fill.None);
-                                        break;
+                                    if (neighboard.Count == 1)
+                                    {
+                                        FillField(neighboard.ElementAt(0), points);
+                                        FillTime(points, Fill.Player);
+                                    }
+                                    else if (neighboard.Count > 1)
+                                        FillTime(points, Fill.None);
+                                    break;
                                 }
                             }
-                            else if(points[n.X, n.Y] == Fill.None)
+                            else if (points[n.X, n.Y] == Fill.None)
                             {
                                 FillTime(points, Fill.None);
                                 break;
@@ -108,7 +108,7 @@ namespace AreaHere
                         neighboard.Clear();
                     }
         }
-        public int CountPlayr(IPlayer p)
+        public virtual int CountPlayr(IPlayer p)
         {
             int count = 0;
             for (int i = 0; i < Width; i++)
@@ -116,7 +116,7 @@ namespace AreaHere
                     if (field[i, j] == p) count++;
             return count;
         }
-        public HashSet<Rectangle> GetStartPoint(IPlayer p, int a, int b)
+        public virtual HashSet<Rectangle> GetStartPoint(IPlayer p, int a, int b)
         {
             a--; b--;
             HashSet<Point> set = GetStartPoint(p);
@@ -147,7 +147,7 @@ namespace AreaHere
             }
             return rec;
         }
-        public HashSet<IPlayer> GetPlayers()
+        public virtual HashSet<IPlayer> GetPlayers()
         {
             HashSet<IPlayer> p = new HashSet<IPlayer>();
             for (int i = 0; i < Width; i++)
@@ -156,7 +156,7 @@ namespace AreaHere
             return p;
         }
 
-        private HashSet<Point> GetStartPoint(IPlayer p)
+        protected HashSet<Point> GetStartPoint(IPlayer p)
         {
             HashSet<Point> set = new HashSet<Point>();
             for (int i = 0; i < Width; i++)
@@ -178,20 +178,20 @@ namespace AreaHere
                     }
             return set;
         }
-        private bool InsideField(int x, int y)
+        protected bool InsideField(int x, int y)
         {
             return (x >= 0 && y >= 0 && x < Width && y < Height);
         }
-        private Direction Rotate(Direction d, bool right)
+        protected Direction Rotate(Direction d, bool right)
         {
-            if(right)
+            if (right)
                 return (Direction)((int)(d + 1) % 4);
             else
                 return (Direction)((int)(d + 3) % 4);
         }
-        private Point Neighboard(Point current, Direction d)
+        protected Point Neighboard(Point current, Direction d)
         {
-            switch(d)
+            switch (d)
             {
                 case Direction.Up:
                     return new Point(current.X, current.Y - 1);
@@ -204,17 +204,96 @@ namespace AreaHere
             }
             return current;
         }
-        private void FillField(IPlayer p, Fill[,] fills)
+        protected void FillField(IPlayer p, Fill[,] fills)
         {
             for (int j = 0; j < Height; j++)
                 for (int i = 0; i < Width; i++)
                     if (fills[i, j] == Fill.Time) field[i, j] = p;
         }
-        private void FillTime(Fill[,] fills, Fill NEW)
+        protected void FillTime(Fill[,] fills, Fill NEW)
         {
             for (int j = 0; j < Height; j++)
                 for (int i = 0; i < Width; i++)
                     if (fills[i, j] == Fill.Time) fills[i, j] = NEW;
+        }
+    }
+
+    public class Field2 : Field
+    {
+        IPlayer wall = new Player("", Color.Gray);
+
+        public Field2(int Width, int Height) : base(Width, Height)
+        {
+            Random r = new Random();
+            for (int i = 0; i < Width * Height / 20; i++)
+                field[r.Next(Width), r.Next(Height)] = wall;
+        }
+        public override void Update()
+        {
+            if (!FieldChanged) return;
+            FieldChanged = false;
+            Fill[,] points = new Fill[Width, Height];
+            for (int j = 0; j < Height; j++)
+                for (int i = 0; i < Width; i++)
+                    if (field[i, j] == null) points[i, j] = Fill.Void;
+                    else points[i, j] = Fill.Player;
+            HashSet<IPlayer> neighboard = new HashSet<IPlayer>();
+            for (int j = 0; j < Height; j++)
+                for (int i = 0; i < Width; i++)
+                    if (points[i, j] == Fill.Void)
+                    {
+                        Point coordinate = new Point(i, j);
+                        Point startPoint = new Point(i, j);
+                        Direction angle = Direction.Up;
+                        int countRotate = 0;
+                        while (true)
+                        {
+                            points[coordinate.X, coordinate.Y] = Fill.Time;
+                            angle = Rotate(angle, false);
+                            --countRotate;
+                            Point n = Neighboard(coordinate, angle);
+                            while (!InsideField(n.X, n.Y))
+                            {
+                                angle = Rotate(angle, true);
+                                ++countRotate;
+                                n = Neighboard(coordinate, angle);
+                            }
+                            if (points[n.X, n.Y] == Fill.Void || points[n.X, n.Y] == Fill.Time)
+                                coordinate = n;
+                            else if (points[n.X, n.Y] == Fill.Player)
+                            {
+                                neighboard.Add(field[n.X, n.Y]);
+                                angle = Rotate(Rotate(angle, true), true);
+                                countRotate += 2;
+                                if (coordinate == startPoint && countRotate > 3)
+                                {
+                                    if (neighboard.Count == 1)
+                                    {
+                                        FillField(neighboard.ElementAt(0), points);
+                                        FillTime(points, Fill.Player);
+                                    }
+                                    else
+                                    {
+                                        neighboard.Remove(wall);
+                                        if (neighboard.Count == 1)
+                                        {
+                                            FillField(neighboard.ElementAt(0), points);
+                                            FillTime(points, Fill.Player);
+                                        }
+                                        else if (neighboard.Count > 1)
+                                            FillTime(points, Fill.None);
+                                    }
+                                    break;
+                                }
+                            }
+                            else if (points[n.X, n.Y] == Fill.None)
+                            {
+                                FillTime(points, Fill.None);
+                                break;
+                            }
+                        }
+                        neighboard.Clear();
+                    }
         }
     }
 }

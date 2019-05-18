@@ -55,18 +55,21 @@
             // 
             // StartButton
             // 
+            this.StartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.StartButton.Enabled = false;
+            this.StartButton.ForeColor = System.Drawing.Color.White;
             this.StartButton.Location = new System.Drawing.Point(13, 13);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(158, 35);
             this.StartButton.TabIndex = 1;
             this.StartButton.Text = "Генерировать";
-            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(191, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
@@ -76,6 +79,7 @@
             // PlayerNameLabel
             // 
             this.PlayerNameLabel.AutoSize = true;
+            this.PlayerNameLabel.ForeColor = System.Drawing.Color.White;
             this.PlayerNameLabel.Location = new System.Drawing.Point(240, 24);
             this.PlayerNameLabel.Name = "PlayerNameLabel";
             this.PlayerNameLabel.Size = new System.Drawing.Size(0, 13);
@@ -84,6 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(318, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
@@ -93,6 +98,7 @@
             // labelA
             // 
             this.labelA.AutoSize = true;
+            this.labelA.ForeColor = System.Drawing.Color.White;
             this.labelA.Location = new System.Drawing.Point(387, 24);
             this.labelA.Name = "labelA";
             this.labelA.Size = new System.Drawing.Size(13, 13);
@@ -102,6 +108,7 @@
             // labelB
             // 
             this.labelB.AutoSize = true;
+            this.labelB.ForeColor = System.Drawing.Color.White;
             this.labelB.Location = new System.Drawing.Point(406, 24);
             this.labelB.Name = "labelB";
             this.labelB.Size = new System.Drawing.Size(13, 13);
@@ -112,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(688, 563);
             this.Controls.Add(this.labelB);
             this.Controls.Add(this.labelA);

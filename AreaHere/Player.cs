@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace AreaHere
 {
     public class Player : IPlayer
     {
-        public string Name { get; private set; }
         public event Func<Rectangle> GetMoveRectangle;
 
-        public Player(string Name)
+        public Player(string Name, Color color)
         {
             this.Name = Name;
+            myColor = color;
         }
-
-        public Rectangle GetMove(Field field, int a, int b)
+        public override Rectangle GetMove(Field field, int a, int b)
         {
             return GetMoveRectangle();
         }
