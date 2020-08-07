@@ -26,7 +26,7 @@ namespace AreaHere
         public Game(int Width, int Height, IPlayer[] players, Mode mode)
         {
             if (players.Length < 2 || players.Length > 4) throw new Exception();
-            switch(mode)
+            switch (mode)
             {
                 case Mode.Normal:
                     field = new Field(Width, Height);
@@ -44,8 +44,9 @@ namespace AreaHere
             for (int i = 0; i < players.Length; i++) firstMove[i] = false;
             while (field.CountVoidCell() > 0)
             {
+                foreach (var p in players) p.UpdateField(field);
                 HashSet<Rectangle> PossibleMoves;
-                int a=0, b=0;
+                int a = 0, b = 0;
                 do
                 {
                     if (a == 1 && b == 1) counter = (counter + 1) % players.Length;
@@ -58,10 +59,13 @@ namespace AreaHere
                     }
                     else PossibleMoves = field.GetStartPoint(players[counter], a, b);
                 } while (PossibleMoves.Count == 0);
+                foreach (var x in players) x.UpdatePlayerMove(players[counter]);
                 NewMove(players[counter], a, b);
+                foreach (var x in players) x.UpdateParametrs(a, b);
                 while (true)
                 {
                     Rectangle rectangle = players[counter].GetMove(field, a, b);
+                    if ((object)rectangle == null) break;
                     bool isRight = false;
                     foreach (var r in PossibleMoves)
                         if (rectangle == r) isRight = true;
@@ -75,6 +79,7 @@ namespace AreaHere
                 if (firstMove[players.Length - 1]) field.Update();
                 DoneMove();
             }
+            foreach (var p in players) p.UpdateField(field);
             int[] score = new int[players.Length];
             for (int i = 0; i < score.Length; i++)
                 score[i] = field.CountPlayr(players[i]);
@@ -86,6 +91,8 @@ namespace AreaHere
                     max = score[i];
                     maxIndex = i;
                 }
+            for (int i = 0; i < players.Length; i++)
+                players[i].EndGame(players[maxIndex]);
             Win(players[maxIndex]);
         }
 

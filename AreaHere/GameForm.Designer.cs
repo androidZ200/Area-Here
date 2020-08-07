@@ -57,6 +57,8 @@
             // 
             this.StartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.StartButton.Enabled = false;
+            this.StartButton.FlatAppearance.BorderSize = 0;
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.ForeColor = System.Drawing.Color.White;
             this.StartButton.Location = new System.Drawing.Point(13, 13);
             this.StartButton.Name = "StartButton";

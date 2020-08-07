@@ -11,8 +11,13 @@ namespace AreaHere
     {
         public string Name { get; protected set; }
         public Color myColor { get; protected set; }
+        public bool inGame { get; protected set; } = true;
 
         public abstract Rectangle GetMove(Field field, int a, int b);
+        public virtual void UpdateField(Field newField)
+        {
+
+        }
         public virtual Image GetImage(int width)
         {
             Image m = new Bitmap(width, width);
@@ -20,5 +25,8 @@ namespace AreaHere
             g.Clear(myColor);
             return m;
         }
+        public virtual void EndGame(IPlayer winer) { }
+        public virtual void UpdatePlayerMove(IPlayer player) { }
+        public virtual void UpdateParametrs(int a, int b) { }
     }
 }

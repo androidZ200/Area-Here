@@ -27,17 +27,26 @@ namespace AreaHere
         }
         private void NewMove(IPlayer player, int a, int b)
         {
+            Invoke(new Action(() =>{ PlayerNameLabel.Text = player.Name; }));
             if (player is Player)
             {
                 Invoke(new Action(() =>
                 {
                     StartButton.Enabled = true;
-                    PlayerNameLabel.Text = player.Name;
                     labelA.Text = "a";
                     labelB.Text = "b";
                 }));
                 Monitor.Enter(lockNewMove);
                 Monitor.Exit(lockNewMove);
+            }
+            else if(player is OnlinePlayer)
+            {
+                Invoke(new Action(() =>
+                {
+                    labelA.Text = "a";
+                    labelB.Text = "b";
+                }));
+                ((OnlinePlayer)player).WaitGenerate();
             }
             Invoke(new Action(() =>
             {

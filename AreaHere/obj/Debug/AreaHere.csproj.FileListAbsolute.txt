@@ -20,3 +20,7 @@ E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.csproj.Ge
 E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.csproj.CoreCompileInputs.cache
 E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.exe
 E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.pdb
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.ConnectForm.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.GameFormOnline.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.ServerForm.resources
+E:\YandexDisk\YandexDisk\Projects\AreaHere\AreaHere\obj\Debug\AreaHere.WaitPlayersForm.resources

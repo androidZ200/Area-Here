@@ -44,6 +44,7 @@
             this.listBox3 = new System.Windows.Forms.ComboBox();
             this.listBox4 = new System.Windows.Forms.ComboBox();
             this.comboBoxMode = new System.Windows.Forms.ComboBox();
+            this.ConnectButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarY)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +54,12 @@
             this.PlayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.PlayButton.FlatAppearance.BorderSize = 0;
+            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayButton.ForeColor = System.Drawing.Color.White;
             this.PlayButton.Location = new System.Drawing.Point(13, 13);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(226, 53);
+            this.PlayButton.Size = new System.Drawing.Size(103, 53);
             this.PlayButton.TabIndex = 0;
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = false;
@@ -133,6 +136,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(12, 162);
             this.textBox1.Name = "textBox1";
@@ -143,6 +147,7 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(12, 188);
             this.textBox2.Name = "textBox2";
@@ -153,6 +158,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.ForeColor = System.Drawing.Color.White;
             this.textBox3.Location = new System.Drawing.Point(12, 214);
             this.textBox3.Name = "textBox3";
@@ -163,6 +169,7 @@
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.ForeColor = System.Drawing.Color.White;
             this.textBox4.Location = new System.Drawing.Point(12, 243);
             this.textBox4.Name = "textBox4";
@@ -173,12 +180,14 @@
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
             "none",
             "player",
-            "bot"});
+            "bot",
+            "online"});
             this.listBox1.Location = new System.Drawing.Point(137, 161);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(102, 21);
@@ -188,12 +197,14 @@
             // listBox2
             // 
             this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.listBox2.ForeColor = System.Drawing.Color.White;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Items.AddRange(new object[] {
             "none",
             "player",
-            "bot"});
+            "bot",
+            "online"});
             this.listBox2.Location = new System.Drawing.Point(137, 188);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(102, 21);
@@ -203,12 +214,14 @@
             // listBox3
             // 
             this.listBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.listBox3.ForeColor = System.Drawing.Color.White;
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Items.AddRange(new object[] {
             "none",
             "player",
-            "bot"});
+            "bot",
+            "online"});
             this.listBox3.Location = new System.Drawing.Point(137, 215);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(102, 21);
@@ -218,12 +231,14 @@
             // listBox4
             // 
             this.listBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.listBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.listBox4.ForeColor = System.Drawing.Color.White;
             this.listBox4.FormattingEnabled = true;
             this.listBox4.Items.AddRange(new object[] {
             "none",
             "player",
-            "bot"});
+            "bot",
+            "online"});
             this.listBox4.Location = new System.Drawing.Point(137, 242);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(102, 21);
@@ -235,6 +250,7 @@
             this.comboBoxMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.comboBoxMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMode.ForeColor = System.Drawing.Color.White;
             this.comboBoxMode.FormattingEnabled = true;
             this.comboBoxMode.Items.AddRange(new object[] {
@@ -246,12 +262,29 @@
             this.comboBoxMode.TabIndex = 16;
             this.comboBoxMode.Text = "Normal";
             // 
+            // ConnectButton
+            // 
+            this.ConnectButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ConnectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ConnectButton.FlatAppearance.BorderSize = 0;
+            this.ConnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConnectButton.ForeColor = System.Drawing.Color.White;
+            this.ConnectButton.Location = new System.Drawing.Point(122, 13);
+            this.ConnectButton.Name = "ConnectButton";
+            this.ConnectButton.Size = new System.Drawing.Size(117, 53);
+            this.ConnectButton.TabIndex = 17;
+            this.ConnectButton.Text = "Connect";
+            this.ConnectButton.UseVisualStyleBackColor = false;
+            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(251, 275);
+            this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.comboBoxMode);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
@@ -296,6 +329,7 @@
         private System.Windows.Forms.ComboBox listBox3;
         private System.Windows.Forms.ComboBox listBox4;
         private System.Windows.Forms.ComboBox comboBoxMode;
+        private System.Windows.Forms.Button ConnectButton;
     }
 }
 
