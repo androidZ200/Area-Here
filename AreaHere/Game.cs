@@ -59,9 +59,8 @@ namespace AreaHere
                     }
                     else PossibleMoves = field.GetStartPoint(players[counter], a, b);
                 } while (PossibleMoves.Count == 0);
-                foreach (var x in players) x.UpdatePlayerMove(players[counter]);
+                foreach (var x in players) x.UpdatePlayerMove(players[counter], a, b);
                 NewMove(players[counter], a, b);
-                foreach (var x in players) x.UpdateParametrs(a, b);
                 while (true)
                 {
                     Rectangle rectangle = players[counter].GetMove(field, a, b);
@@ -78,7 +77,18 @@ namespace AreaHere
                 counter = (counter + 1) % players.Length;
                 if (firstMove[players.Length - 1]) field.Update();
                 DoneMove();
+
+                for(int i = 0; i < players.Length; i++)
+                    for(int j = 0; j < players.Length; j++)
+                        if(i != j)
+                        {
+                            if(field.CountPlayr(players[i]) <= field.CountPlayr(players[j]) + field.CountVoidCell())
+                                break;
+                            else if (j == players.Length - 1)
+                                goto end_game;
+                        } 
             }
+            end_game:
             foreach (var p in players) p.UpdateField(field);
             int[] score = new int[players.Length];
             for (int i = 0; i < score.Length; i++)

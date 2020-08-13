@@ -26,7 +26,6 @@ namespace AreaHere
             return m;
         }
         public virtual void EndGame(IPlayer winer) { }
-        public virtual void UpdatePlayerMove(IPlayer player) { }
-        public virtual void UpdateParametrs(int a, int b) { }
+        public virtual void UpdatePlayerMove(IPlayer player, int a, int b) { }
     }
 }

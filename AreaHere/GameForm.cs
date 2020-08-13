@@ -27,29 +27,9 @@ namespace AreaHere
         }
         private void NewMove(IPlayer player, int a, int b)
         {
-            Invoke(new Action(() =>{ PlayerNameLabel.Text = player.Name; }));
-            if (player is Player)
-            {
-                Invoke(new Action(() =>
-                {
-                    StartButton.Enabled = true;
-                    labelA.Text = "a";
-                    labelB.Text = "b";
-                }));
-                Monitor.Enter(lockNewMove);
-                Monitor.Exit(lockNewMove);
-            }
-            else if(player is OnlinePlayer)
-            {
-                Invoke(new Action(() =>
-                {
-                    labelA.Text = "a";
-                    labelB.Text = "b";
-                }));
-                ((OnlinePlayer)player).WaitGenerate();
-            }
             Invoke(new Action(() =>
             {
+                PlayerNameLabel.Text = player.Name;
                 labelA.Text = a.ToString();
                 labelB.Text = b.ToString();
             }));
@@ -147,12 +127,6 @@ namespace AreaHere
             Monitor.Enter(lockNewMove);
             Monitor.Enter(lockGetMove);
             DrawField();
-        }
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-            Monitor.Exit(lockNewMove);
-            StartButton.Enabled = false;
-            Monitor.Enter(lockNewMove);
         }
         private void GameForm_Load(object sender, EventArgs e)
         {

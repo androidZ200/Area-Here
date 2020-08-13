@@ -71,31 +71,15 @@ namespace AreaHere
             socket.Send(Encoding.Unicode.GetBytes(winer.Name));
             socket.Close();
         }
-        public override void UpdateParametrs(int a, int b)
-        {
-            CheckConnect();
-            if (!inGame) return;
-            socket.Send(BitConverter.GetBytes(5));
-            socket.Send(BitConverter.GetBytes(a));
-            socket.Send(BitConverter.GetBytes(b));
-        }
-        public override void UpdatePlayerMove(IPlayer player)
+        public override void UpdatePlayerMove(IPlayer player, int a, int b)
         {
             CheckConnect();
             if (!inGame) return;
             socket.Send(BitConverter.GetBytes(4));
             socket.Send(BitConverter.GetBytes(Encoding.Unicode.GetBytes(player.Name).Length));
             socket.Send(Encoding.Unicode.GetBytes(player.Name));
-        }
-        public void WaitGenerate()
-        {
-            CheckConnect();
-            if (!inGame) return;
-            socket.Send(BitConverter.GetBytes(6));
-            byte[] t = new byte[4];
-            WaitData(4);
-            if (!inGame) return;
-            socket.Receive(t);
+            socket.Send(BitConverter.GetBytes(a));
+            socket.Send(BitConverter.GetBytes(b));
         }
 
         private int[] toData(Field f)

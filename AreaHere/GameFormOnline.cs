@@ -131,16 +131,13 @@ namespace AreaHere
                         }
                         DrawField();
                         isMyMove = false;
-                        Invoke((Action)(() => {
-                            labelA.Text = "a";
-                            labelB.Text = "b";
-                        }));
                         break;
                     case 2:
                         WaitData(4); soc.Receive(t);
                         a = BitConverter.ToInt32(t, 0);
                         WaitData(4); soc.Receive(t);
                         b = BitConverter.ToInt32(t, 0);
+                        isMyMove = true;
                         break;
                     case 3:
                         WaitData(4); soc.Receive(t);
@@ -158,15 +155,10 @@ namespace AreaHere
                         WaitData(size); soc.Receive(byteName);
                         string playerName = Encoding.Unicode.GetString(byteName);
                         Invoke((Action)(() => { labelName.Text = playerName; }));
-                        break;
-                    case 5:
                         WaitData(4); soc.Receive(t);
                         Invoke((Action)(() => { labelA.Text = BitConverter.ToInt32(t, 0).ToString(); }));
                         WaitData(4); soc.Receive(t);
                         Invoke((Action)(() => { labelB.Text = BitConverter.ToInt32(t, 0).ToString(); }));
-                        break;
-                    case 6:
-                        if (!isMyMove) Invoke((Action)(() => { buttonGenerate.Enabled = true; }));
                         break;
                 }
             }
@@ -230,14 +222,6 @@ namespace AreaHere
                 if (end != prevEnd)
                     DrawField(new Rectangle(l, u, r, d));
             }
-        }
-        private void buttonGenerate_Click(object sender, EventArgs e)
-        {
-            labelA.Text = a.ToString();
-            labelB.Text = b.ToString();
-            isMyMove = true;
-            buttonGenerate.Enabled = false;
-            soc.Send(BitConverter.GetBytes(0));
         }
     }
 }
